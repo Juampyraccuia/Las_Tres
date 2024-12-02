@@ -1,0 +1,18 @@
+.item-list-container {
+  background-image: linear-gradient(to right, #fce7f3, #ede9fe);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.item-list-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #3b82f6;
+  margin-bottom: 1rem;
+}
+
+.item-list-description {
+  color: #4b5563;
+}
