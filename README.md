@@ -1,3 +1,10 @@
-# Las Tres 
+# Las Tres  - with React JS
+##### `Dev - Juan Pablo Raccuia`
 
-Pagina web para el negocio Las Tres de Alquiler de vestidos de fiesta, venta de ropa interior y accesorios de mujer
+<img src="public\img\logo.png" width="50" height="50" background-color="white">
+
+## Descripción
+### Proyecto realizado para un local de ropa interior, accesorios y alquiler de vestidos de fiesta para mujeres 
+
+## Dependencias
+`firebase` `react-router-dom`
