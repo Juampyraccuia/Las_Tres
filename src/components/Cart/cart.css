@@ -1,5 +1,6 @@
 .cart{
   padding: 30px;
+  color: #202020;
 }
 .title-cart{
   padding: 20px 0;
@@ -9,13 +10,13 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 5px solid rgb(42, 42, 42);
+  border: 5px solid #C71585 ;
   border-radius: 5px;
   padding: 5px;
   margin: 10px 0;
 }
 .img-item-cart{
-  width: 100px;
+  width: 90px;
   height: 100px;
   border-radius: 5px;
 }
@@ -81,7 +82,7 @@
   align-items: center;
   width: 200px;
   height: 40px;
-  background-color: rgb(42, 42, 42);
+  background-color: #FFF0F5;
   border: 2px solid #1b8246;
   border-radius: 5px;
   color: #2ECC71;

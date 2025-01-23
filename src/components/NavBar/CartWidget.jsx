@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { PiShoppingCartBold } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import "./cartwidget.css"
 
 const CartWidget = () => {
   const { totalQuantity } = useContext(CartContext)

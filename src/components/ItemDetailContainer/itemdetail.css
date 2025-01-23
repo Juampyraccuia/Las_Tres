@@ -3,6 +3,8 @@
   width: 100%;
   min-height: 90vh;
   padding: 100px 0;
+  background-color: #FFF0F5;
+  color: #202020;
 }
 
 .images-detail-container {
@@ -37,6 +39,10 @@
   display: flex;
   flex-direction: column;
   padding: 0 10px;
+}
+
+.text-detail-container a{
+  color : #ff5cf1;
 }
 
 .title-detail {

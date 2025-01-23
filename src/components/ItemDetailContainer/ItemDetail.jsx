@@ -1,32 +1,40 @@
-import { useContext, useState } from "react"
-import { CartContext } from "../../context/CartContext"
-import ItemCount from "../ItemCount/ItemCount"
-import { Link } from "react-router-dom"
-import "./itemdetail.css"
+import { useContext, useState, useEffect } from "react";
+import { CartContext } from "../../context/CartContext";
+import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
+import Loader from "../Loader/Loader";
+import "./itemdetail.css";
 
 const ItemDetail = ({ product }) => {
-  //estado para controlar si se muestra o no el componente ItemCount
-  const [showItemCount, setShowItemCount] = useState(true)
+  const [showItemCount, setShowItemCount] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const { addProduct } = useContext(CartContext);
 
-  const { addProduct } = useContext(CartContext)
+  useEffect(() => {
+    // Simulamos una carga de datos
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Ajusta este tiempo según tus necesidades
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const addProductInCart = (count) => {
-    //producto que vamos a añadir al carrito
-    const productCart = { ...product, quantity: count }
+    const productCart = { ...product, quantity: count };
+    addProduct(productCart);
+    setShowItemCount(false);
+  };
 
-    addProduct(productCart)
-    
-    //cambiamos el estado para que se deje de mostrar ItemCount
-    setShowItemCount(false)
+  if (isLoading) {
+    return <Loader />;
   }
 
   return (
     <div className="item-detail">
       <div className="images-detail-container">
-        <div className="secondary-images">
-        </div>
+        <div className="secondary-images"></div>
         <div className="main-image">
-          <img src={product.image} alt="" />
+          <img src={product.image || "/placeholder.svg"} alt="" />
         </div>
       </div>
 
@@ -34,15 +42,17 @@ const ItemDetail = ({ product }) => {
         <h2 className="title-detail">{product.name}</h2>
         <p className="text-detail">{product.description}</p>
         <p className="text-detail">Precio: ${product.price}</p>
-        {
-          showItemCount === true ? (
-            <ItemCount stock={product.stock} addProductInCart={addProductInCart} />
-          ) : (
-            <Link to="/cart">Terminar mi compra</Link>
-          )
-        }
+        {showItemCount ? (
+          <ItemCount
+            stock={product.stock}
+            addProductInCart={addProductInCart}
+          />
+        ) : (
+          <Link to="/cart">Terminar mi compra</Link>
+        )}
       </div>
     </div>
-  )
-}
-export default ItemDetail
+  );
+};
+
+export default ItemDetail;
