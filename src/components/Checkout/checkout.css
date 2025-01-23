@@ -35,10 +35,9 @@
   height: 40px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: rgb(27, 27, 27);
-  border: 2px solid rgb(123, 123, 123);
+  align-items: center;;
+  border: 2px solid rgb(230, 93, 207);
   border-radius: 5px;
-  color: rgb(177, 177, 177);
+  color: rgb(230, 93, 207);
   font-size: 20px;
 }
